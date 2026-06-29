@@ -1,0 +1,7 @@
+lending_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('LENDING_DB_PATH', 'lending.duckdb') }}"
+      threads: 4
