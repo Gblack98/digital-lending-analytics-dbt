@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: loan_portfolio_risk
+    description: Loan-level risk view — DPD, delinquency status, provisions
+    columns:
+      - name: loan_id
+        tests: [not_null, unique]
+      - name: loan_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: [closed, active, dpd_1_30, dpd_31_60, dpd_61_90, npl]
+
+  - name: portfolio_summary
+    description: Country-level headline KPIs (PAR30/60/90, NPL, provisions)
+    columns:
+      - name: country_code
+        tests: [not_null, unique]
+
+  - name: cohort_analysis
+    description: Monthly origination cohorts by product and country
