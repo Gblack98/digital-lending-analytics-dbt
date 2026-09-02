@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: loan_portfolio_risk
-    description: Loan-level risk view — DPD, delinquency status, provisions
+    description: Loan-level risk view, DPD, delinquency status and provisions
     columns:
       - name: loan_id
         tests: [not_null, unique]

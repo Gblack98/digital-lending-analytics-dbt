@@ -1,5 +1,5 @@
 -- loan_portfolio_risk.sql
--- Real-time portfolio risk KPIs — used by risk officers dashboard
+-- Portfolio risk KPIs behind the risk officers dashboard
 
 with loans as (
     select * from {{ ref('stg_loans') }}
@@ -28,7 +28,7 @@ loan_performance as (
         greatest(l.principal_usd - coalesce(r.total_paid_usd, 0), 0)
                                                              as outstanding_balance_usd,
 
-        -- Days past due (DPD) — key risk metric
+        -- Days past due, the metric everything else keys off
         case
             when coalesce(r.total_paid_usd, 0) >= l.principal_usd then 0
             when current_date <= l.maturity_date then 0

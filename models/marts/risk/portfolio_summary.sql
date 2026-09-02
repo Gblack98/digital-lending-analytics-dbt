@@ -1,4 +1,4 @@
--- Headline risk KPIs per country — the one table a risk officer opens first.
+-- Headline risk KPIs per country, the first table a risk officer opens.
 -- PAR30/60/90 = share of outstanding held by loans more than 30/60/90 days
 -- past due (standard microfinance portfolio-at-risk definition).
 

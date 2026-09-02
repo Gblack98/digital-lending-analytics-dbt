@@ -11,7 +11,7 @@ raw.loans / raw.repayments   (seeded synthetic loan book with on-time / late / d
         finance/cohort_analysis    repayment & NPL rate by disbursement month × product
 ```
 
-Data is **synthetic** (seeded generator in `data_generator/`, ~12k loans, ~10% defaulters) — no proprietary data. Guardrails: uniqueness/relationships tests plus singular tests (outstanding never negative, PAR30 ≥ PAR60 ≥ PAR90 by construction).
+Data is synthetic, produced by the seeded generator in `data_generator/`: about 12k loans and 10% defaulters, no proprietary data. Guardrails: uniqueness and relationship tests, plus singular tests (outstanding never negative, PAR30 >= PAR60 >= PAR90 by construction).
 
 ## Run
 
